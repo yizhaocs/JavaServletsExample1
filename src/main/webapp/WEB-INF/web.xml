@@ -24,7 +24,7 @@
         <url-pattern>/HelloWorld</url-pattern>
     </servlet-mapping>
 
-    <!--HelloForm package-->
+    <!--FormData package-->
     <servlet>
         <servlet-name>HelloForm</servlet-name>
         <servlet-class>com.yizhao.FormData.HelloForm</servlet-class>
@@ -35,7 +35,7 @@
         <url-pattern>/HelloForm</url-pattern>
     </servlet-mapping>
 
-    <!--DisplayHeader package-->
+    <!--ClientHTTPRequest package-->
     <servlet>
         <servlet-name>DisplayHeader</servlet-name>
         <servlet-class>com.yizhao.ClientHTTPRequest.DisplayHeader</servlet-class>
@@ -46,7 +46,7 @@
         <url-pattern>/DisplayHeader</url-pattern>
     </servlet-mapping>
 
-    <!--Refresh package-->
+    <!--ServerHTTPResponse package-->
     <servlet>
         <servlet-name>Refresh</servlet-name>
         <servlet-class>com.yizhao.ServerHTTPResponse.Refresh</servlet-class>
@@ -57,8 +57,21 @@
         <url-pattern>/Refresh</url-pattern>
     </servlet-mapping>
 
+    <!--WritingFilters package-->
+    <filter>
+        <filter-name>LogFilter</filter-name>
+        <filter-class>com.yizhao.WritingFilters.LogFilter</filter-class>
+        <init-param>
+            <param-name>test-param</param-name>
+            <param-value>Initialization Paramter</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>LogFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
-    <!--ShowError package-->
+    <!--HttpStatusCodes package-->
     <servlet>
         <servlet-name>ShowError</servlet-name>
         <servlet-class>com.yizhao.HttpStatusCodes.ShowError</servlet-class>
@@ -70,7 +83,7 @@
     </servlet-mapping>
 
 
-    <!--HelloFormWithCookie package-->
+    <!--CookiesHandling package-->
     <servlet>
         <servlet-name>HelloFormWithCookie</servlet-name>
         <servlet-class>com.yizhao.CookiesHandling.HelloFormWithCookie</servlet-class>
@@ -101,7 +114,7 @@
         <url-pattern>/DeleteCookies</url-pattern>
     </servlet-mapping>
 
-    <!--SessionTrack package-->
+    <!--SessionTracking package-->
     <servlet>
         <servlet-name>SessionTrack</servlet-name>
         <servlet-class>com.yizhao.SessionTracking.SessionTrack</servlet-class>
@@ -127,7 +140,7 @@
         <url-pattern>/DatabaseAccess</url-pattern>
     </servlet-mapping>
 
-    <!--UploadServlet package-->
+    <!--FileUploading package-->
     <servlet>
         <servlet-name>UploadServlet</servlet-name>
         <servlet-class>com.yizhao.FileUploading.UploadServlet</servlet-class>
@@ -170,7 +183,7 @@
         <url-pattern>/PageRedirect</url-pattern>
     </servlet-mapping>
 
-    <!--PageRedirection package-->
+    <!--HitsCounter package-->
     <servlet>
         <servlet-name>PageHitCounter</servlet-name>
         <servlet-class>com.yizhao.HitsCounter.PageHitCounter</servlet-class>
@@ -190,4 +203,16 @@
         <filter-name>SiteHitCounter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!--SendingEmail package-->
+    <servlet>
+        <servlet-name>SendEmail</servlet-name>
+        <servlet-class>com.yizhao.SendingEmail.SendEmail</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SendEmail</servlet-name>
+        <url-pattern>/SendEmail</url-pattern>
+    </servlet-mapping>
+
 </web-app>

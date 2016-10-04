@@ -137,4 +137,36 @@
         <servlet-name>UploadServlet</servlet-name>
         <url-pattern>/UploadServlet</url-pattern>
     </servlet-mapping>
+
+    <!--HandlingDate package-->
+    <servlet>
+        <servlet-name>CurrentDateNotUsingSimpleDate</servlet-name>
+        <servlet-class>com.yizhao.HandlingDate.CurrentDateNotUsingSimpleDate</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CurrentDateNotUsingSimpleDate</servlet-name>
+        <url-pattern>/CurrentDateNotUsingSimpleDate</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CurrentDateUsingSimpleDate</servlet-name>
+        <servlet-class>com.yizhao.HandlingDate.CurrentDateUsingSimpleDate</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CurrentDateUsingSimpleDate</servlet-name>
+        <url-pattern>/CurrentDateUsingSimpleDate</url-pattern>
+    </servlet-mapping>
+
+    <!--PageRedirection package-->
+    <servlet>
+        <servlet-name>PageRedirect</servlet-name>
+        <servlet-class>com.yizhao.PageRedirection.PageRedirect</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PageRedirect</servlet-name>
+        <url-pattern>/PageRedirect</url-pattern>
+    </servlet-mapping>
 </web-app>

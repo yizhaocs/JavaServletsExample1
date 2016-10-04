@@ -1,4 +1,4 @@
-package com.yizhao;
+package com.yizhao.HelloWorld;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -8,23 +8,22 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Created by yzhao on 10/4/16.
+ * https://www.tutorialspoint.com/servlets/servlets-first-example.htm
+ * curl http://localhost:8080/HelloWorld
  */
 // Extend HttpServlet class
 public class HelloWorld extends HttpServlet {
 
     private String message;
 
-    public void init() throws ServletException
-    {
+    public void init() throws ServletException {
         // Do required initialization
         message = "Hello World";
     }
 
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         // Set response content type
         response.setContentType("text/html");
 
@@ -33,8 +32,7 @@ public class HelloWorld extends HttpServlet {
         out.println("<h1>" + message + "</h1>");
     }
 
-    public void destroy()
-    {
+    public void destroy() {
         // do nothing.
     }
 }

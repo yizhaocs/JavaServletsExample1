@@ -1,17 +1,111 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
 
-  <servlet>
-    <servlet-name>HelloWorld</servlet-name>
-    <servlet-class>com.yizhao.HelloWorld</servlet-class>
-  </servlet>
+    <servlet>
+        <servlet-name>HelloWorld</servlet-name>
+        <servlet-class>com.yizhao.HelloWorld.HelloWorld</servlet-class>
+    </servlet>
 
-  <servlet-mapping>
-    <servlet-name>HelloWorld</servlet-name>
-    <url-pattern>/HelloWorld</url-pattern>
-  </servlet-mapping>
+    <servlet>
+        <servlet-name>HelloForm</servlet-name>
+        <servlet-class>com.yizhao.FormData.HelloForm</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DisplayHeader</servlet-name>
+        <servlet-class>com.yizhao.ClientHTTPRequest.DisplayHeader</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Refresh</servlet-name>
+        <servlet-class>com.yizhao.ServerHTTPResponse.Refresh</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ShowError</servlet-name>
+        <servlet-class>com.yizhao.HttpStatusCodes.ShowError</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>HelloFormWithCookie</servlet-name>
+        <servlet-class>com.yizhao.CookiesHandling.HelloFormWithCookie</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ReadCookies</servlet-name>
+        <servlet-class>com.yizhao.CookiesHandling.ReadCookies</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DeleteCookies</servlet-name>
+        <servlet-class>com.yizhao.CookiesHandling.DeleteCookies</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>SessionTrack</servlet-name>
+        <servlet-class>com.yizhao.SessionTracking.SessionTrack</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DatabaseAccess</servlet-name>
+        <servlet-class>com.yizhao.DatabaseAccess.DatabaseAccess</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HelloWorld</servlet-name>
+        <url-pattern>/HelloWorld</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>HelloForm</servlet-name>
+        <url-pattern>/HelloForm</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DisplayHeader</servlet-name>
+        <url-pattern>/DisplayHeader</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Refresh</servlet-name>
+        <url-pattern>/Refresh</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ShowError</servlet-name>
+        <url-pattern>/ShowError</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>HelloFormWithCookie</servlet-name>
+        <url-pattern>/HelloFormWithCookie</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ReadCookies</servlet-name>
+        <url-pattern>/ReadCookies</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DeleteCookies</servlet-name>
+        <url-pattern>/DeleteCookies</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DatabaseAccess</servlet-name>
+        <url-pattern>/DatabaseAccess</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SessionTrack</servlet-name>
+        <url-pattern>/SessionTrack</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
 </web-app>

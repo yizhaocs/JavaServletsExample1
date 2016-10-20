@@ -18,16 +18,15 @@ public class CurrentDateUsingSimpleDate extends HttpServlet {
 
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         // Set response content type
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
         String title = "Display Current Date & Time";
-        Date dNow = new Date( );
+        Date dNow = new Date();
         SimpleDateFormat ft =
-                new SimpleDateFormat ("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
+                new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
         String docType =
                 "<!doctype html public \"-//w3c//dtd html 4.0 " +
                         "transitional//en\">\n";

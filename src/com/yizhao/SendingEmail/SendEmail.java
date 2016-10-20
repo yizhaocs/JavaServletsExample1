@@ -26,8 +26,7 @@ public class SendEmail extends HttpServlet {
 
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         // Recipient's email ID needs to be mentioned.
         String to = "yi.zhao@adara.com";
 
@@ -35,30 +34,31 @@ public class SendEmail extends HttpServlet {
         String from = "yi.zhao@adara.com";
 
         // Assuming you are sending email from localhost
-        String host = "localhost";
+        String host = "smtp.gmail.com";
+
+        // Username
+        String user = "yi.zhao@adara.com";
+        String password = "password";
+
 
         // Get system properties
         Properties properties = System.getProperties();
-//        properties.setProperty("mail.user", "yi.zhao@adara.com");
-//        properties.setProperty("mail.password", "n2eb3afam7");
-        // Setup mail server
-        // properties.setProperty("mail.smtp.host", host);
 
 
-        properties.setProperty("mail.host", "smtp.gmail.com");
+        properties.setProperty("mail.host", host);
         properties.setProperty("mail.smtp.port", "587");
         properties.setProperty("mail.smtp.auth", "true");
         properties.setProperty("mail.smtp.starttls.enable", "true");
-        Authenticator auth = new SMTPAuthenticator("yi.zhao@adara.com", "n2eb3afam7");
+        Authenticator auth = new SMTPAuthenticator(user, password);
 
         // Get the default Session object.
-        Session session = Session.getInstance(properties,auth);
+        Session session = Session.getInstance(properties, auth);
 
         // Set response content type
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         MimeMessage message = null;
-        try{
+        try {
             // Create a default MimeMessage object.
             message = new MimeMessage(session);
             // Set From: header field of the header.
@@ -85,25 +85,22 @@ public class SendEmail extends HttpServlet {
                     "<p align=\"center\">" + res + "</p>\n" +
                     "</body></html>");
 
-        } catch (AddressException e){
+        } catch (AddressException e) {
 
-        }catch (javax.mail.MessagingException e){
+        } catch (javax.mail.MessagingException e) {
             e.printStackTrace();
         }
     }
 
-    private class SMTPAuthenticator extends Authenticator
-    {
+    private class SMTPAuthenticator extends Authenticator {
         private PasswordAuthentication authentication;
 
-        public SMTPAuthenticator(String login, String password)
-        {
+        public SMTPAuthenticator(String login, String password) {
             authentication = new PasswordAuthentication(login, password);
         }
 
         @Override
-        protected PasswordAuthentication getPasswordAuthentication()
-        {
+        protected PasswordAuthentication getPasswordAuthentication() {
             return authentication;
         }
     }

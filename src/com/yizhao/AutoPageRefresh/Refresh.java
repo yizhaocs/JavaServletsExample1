@@ -18,8 +18,7 @@ public class Refresh extends HttpServlet {
     // Method to handle GET method request.
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         // Set refresh, autoload time as 5 seconds
         response.setIntHeader("Refresh", 5);
 
@@ -32,12 +31,12 @@ public class Refresh extends HttpServlet {
         int hour = calendar.get(Calendar.HOUR);
         int minute = calendar.get(Calendar.MINUTE);
         int second = calendar.get(Calendar.SECOND);
-        if(calendar.get(Calendar.AM_PM) == 0)
+        if (calendar.get(Calendar.AM_PM) == 0)
             am_pm = "AM";
         else
             am_pm = "PM";
 
-        String CT = hour+":"+ minute +":"+ second +" "+ am_pm;
+        String CT = hour + ":" + minute + ":" + second + " " + am_pm;
 
         PrintWriter out = response.getWriter();
         String title = "Auto Page Refresh using Servlet";
@@ -46,11 +45,12 @@ public class Refresh extends HttpServlet {
                         "transitional//en\">\n";
         out.println(docType +
                 "<html>\n" +
-                "<head><title>" + title + "</title></head>\n"+
+                "<head><title>" + title + "</title></head>\n" +
                 "<body bgcolor=\"#f0f0f0\">\n" +
                 "<h1 align=\"center\">" + title + "</h1>\n" +
                 "<p>Current Time is: " + CT + "</p>\n");
     }
+
     // Method to handle POST method request.
     public void doPost(HttpServletRequest request,
                        HttpServletResponse response)

@@ -16,16 +16,14 @@ public class PageHitCounter extends HttpServlet {
 
     private int hitCount;
 
-    public void init()
-    {
+    public void init() {
         // Reset hit counter.
         hitCount = 0;
     }
 
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         // Set response content type
         response.setContentType("text/html");
         // This method executes whenever the servlet is hit
@@ -45,8 +43,8 @@ public class PageHitCounter extends HttpServlet {
                 "</body></html>");
 
     }
-    public void destroy()
-    {
+
+    public void destroy() {
         // This is optional step but if you like you
         // can write hitCount value in your database.
     }

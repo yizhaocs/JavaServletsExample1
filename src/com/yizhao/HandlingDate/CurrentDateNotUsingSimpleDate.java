@@ -18,8 +18,7 @@ public class CurrentDateNotUsingSimpleDate extends HttpServlet {
 
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
         // Set response content type
         response.setContentType("text/html");
 

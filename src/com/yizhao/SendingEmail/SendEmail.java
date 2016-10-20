@@ -1,6 +1,8 @@
 package com.yizhao.SendingEmail;
 
+import javax.mail.Authenticator;
 import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.AddressException;
@@ -16,6 +18,7 @@ import java.util.Properties;
 
 /**
  * https://www.tutorialspoint.com/servlets/servlets-sending-email.htm
+ * http://stackoverflow.com/questions/8612437/unable-to-send-e-mail-through-java
  * Browser:
  * http://localhost:8080/SendEmail
  */
@@ -26,22 +29,30 @@ public class SendEmail extends HttpServlet {
             throws ServletException, IOException
     {
         // Recipient's email ID needs to be mentioned.
-        String to = "abcd@gmail.com";
+        String to = "yi.zhao@adara.com";
 
         // Sender's email ID needs to be mentioned
-        String from = "web@gmail.com";
+        String from = "yi.zhao@adara.com";
 
         // Assuming you are sending email from localhost
         String host = "localhost";
 
         // Get system properties
         Properties properties = System.getProperties();
-
+//        properties.setProperty("mail.user", "yi.zhao@adara.com");
+//        properties.setProperty("mail.password", "n2eb3afam7");
         // Setup mail server
-        properties.setProperty("mail.smtp.host", host);
+        // properties.setProperty("mail.smtp.host", host);
+
+
+        properties.setProperty("mail.host", "smtp.gmail.com");
+        properties.setProperty("mail.smtp.port", "587");
+        properties.setProperty("mail.smtp.auth", "true");
+        properties.setProperty("mail.smtp.starttls.enable", "true");
+        Authenticator auth = new SMTPAuthenticator("yi.zhao@adara.com", "n2eb3afam7");
 
         // Get the default Session object.
-        Session session = Session.getDefaultInstance(properties);
+        Session session = Session.getInstance(properties,auth);
 
         // Set response content type
         response.setContentType("text/html");
@@ -78,6 +89,22 @@ public class SendEmail extends HttpServlet {
 
         }catch (javax.mail.MessagingException e){
             e.printStackTrace();
+        }
+    }
+
+    private class SMTPAuthenticator extends Authenticator
+    {
+        private PasswordAuthentication authentication;
+
+        public SMTPAuthenticator(String login, String password)
+        {
+            authentication = new PasswordAuthentication(login, password);
+        }
+
+        @Override
+        protected PasswordAuthentication getPasswordAuthentication()
+        {
+            return authentication;
         }
     }
 }

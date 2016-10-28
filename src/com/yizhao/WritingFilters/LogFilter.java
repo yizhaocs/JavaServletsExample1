@@ -13,6 +13,7 @@ import java.util.Date;
 
 /**
  * https://www.tutorialspoint.com/servlets/servlets-writing-filters.htm
+ * run the tomcat then read from console
  */
 // Implements Filter class
 public class LogFilter implements Filter {

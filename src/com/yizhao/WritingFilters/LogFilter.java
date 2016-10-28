@@ -14,6 +14,12 @@ import java.util.Date;
 /**
  * https://www.tutorialspoint.com/servlets/servlets-writing-filters.htm
  * run the tomcat then read from console
+ * curl http://localhost:8080/a
+ * curl http://localhost:8080/b
+ * curl http://localhost:8080/c
+ * curl http://localhost:8080/d
+ * curl http://localhost:8080/a/a
+ * then read console
  */
 // Implements Filter class
 public class LogFilter implements Filter {

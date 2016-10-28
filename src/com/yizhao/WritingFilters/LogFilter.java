@@ -34,7 +34,7 @@ public class LogFilter implements Filter {
         String ipAddress = request.getRemoteAddr();
 
         // Log the IP address and current timestamp.
-        System.out.println("IP " + ipAddress + ", Time "
+        System.out.println("Print from Filter: IP " + ipAddress + ", Time "
                 + new Date().toString());
 
         // Pass request back down the filter chain
